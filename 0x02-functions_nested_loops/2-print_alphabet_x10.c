@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
- * _islower - Short description, single line
- * @c: contains value to be compared
- * Return: Always 0.
- */
-int _islower(int c)
+* print_alphabet_x10 - Prints the alphabet 10 times.
+*
+* Return: Always 0
+*/
 
+void print_alphabet_x10(void)
 {
+	int i, j;
 
-if (c > 'a' && c < 'z')
-{
-return (1);
-}
-
-else
-{
-return (0);
-}
-
+	for (i = 0; i <= 9; i++)
+	{
+		for (j = 97; j <= 122; j++)
+		{
+			_putchar(j);
+		}
+			_putchar('\n');
+	}
 }
