@@ -1,21 +1,21 @@
-#include "main.h"
+# inclure  " main.h "
 
-/**
- * print_chessboard - prints chessboard.
- *
- * @a: rows.
- * Return: nothing.
+/* *
+* print_chessboard - imprime l'échiquier.
+*
+* @a : lignes.
+* Retour : rien.
  */
-void print_chessboard(char (*a)[8])
+void  print_chessboard ( char (*a)[8])
 {
-	int i, j;
+	int je, j ;
 
-	for (i = 0; i < 8; i++)
+	pour (i = 0 ; i < 8 ; i++)
 	{
-		for (j = 0; j < 8; j++)
+		pour (j = 0 ; j < 8 ; j++)
 		{
-			_putchar(a[i][j]);
+			_putchar (a[i][j]);
 		}
-		_putchar('\n');
+		_putchar ( ' \n ' );
 	}
 }
