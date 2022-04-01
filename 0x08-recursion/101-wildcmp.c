@@ -1,22 +1,35 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
 /**
- * main - Lists all the natural numbers below 1024 (excluded)
- * that are multiples of 3 or 5.
+ * wildcmp - is a fuction that compares two strings.
  *
- * Return: Always (0).
- */
+ * @s1: is a pointer to char.
+ * @s2: is a pointer to char.
+ *
+ * Return: Returns the transformed pointer.
+**/
 
-int main(void)
+int wildcmp(char *s1, char *s2)
 {
-	int i, sum;
-
-	sum = 0;
-	for (i = 0; i < 1024; i++)
-	{
-		if ((i % 3) == 0 || (i % 5) == 0)
-			sum += i;
-	}
-	printf("%d\n", sum);
-
-	return (0);
+if (*s1 == '\0' && *s2 == '\0')
+{
+return (1);
+}
+else if (*s1 == *s2)
+{
+return (wildcmp(s1 + 1, s2 + 1));
+}
+if (*s2 == '*')
+{
+if (*(s2 + 1) == '*')
+{
+return (wildcmp(s1, s2 + 1));
+}
+else if (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1))
+{
+return (1);
+}
+}
+return (0);
 }
